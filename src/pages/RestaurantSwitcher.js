@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import RestaurantCard from '../components/RestaurantCard';
+import {restaurant_view} from '../styles';
 
 const url_path = 'https://random-data-api.com/api/restaurant/random_restaurant';
 
@@ -31,9 +32,11 @@ function RestaurantViewer({navigation}) {
         <RestaurantCard data={restaurantData} />
       </ScrollView>
 
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text>Go Back</Text>
+      <View style={restaurant_view.buttonContainer}>
+        <TouchableOpacity
+          style={restaurant_view.button}
+          onPress={() => navigation.goBack()}>
+          <Text style={restaurant_view.buttonText}>Go Back</Text>
         </TouchableOpacity>
       </View>
     </View>
