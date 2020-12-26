@@ -31,7 +31,8 @@ function RestaurantViewer({navigation}) {
 
   if (!restaurantData) {
     return (
-      <SafeAreaView>
+      <SafeAreaView
+        style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <ActivityIndicator />
         <Text>Restaurants are Loading</Text>
       </SafeAreaView>
