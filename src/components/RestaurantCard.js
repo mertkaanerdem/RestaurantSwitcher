@@ -26,6 +26,7 @@ function RestaurantCard({data}) {
           <Text style={restaurant_view.phone}>{data.phone_number}</Text>
         </View>
       </View>
+      <Text style={restaurant_view.review}>"{data.review}"</Text>
     </View>
   );
 }

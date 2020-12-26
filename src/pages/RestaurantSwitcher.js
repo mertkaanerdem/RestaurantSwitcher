@@ -27,7 +27,7 @@ function RestaurantViewer({navigation}) {
   }, []);
 
   return (
-    <View>
+    <ScrollView>
       <ScrollView>
         <RestaurantCard data={restaurantData} />
       </ScrollView>
@@ -39,7 +39,7 @@ function RestaurantViewer({navigation}) {
           <Text style={restaurant_view.buttonText}>Go Back</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
