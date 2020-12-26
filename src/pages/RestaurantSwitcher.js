@@ -15,19 +15,34 @@ import {restaurant_view} from '../styles';
 const url_path = 'https://random-data-api.com/api/restaurant/random_restaurant';
 
 function RestaurantViewer({navigation}) {
-  const [restaurantData, setRestaurantData] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [restaurantData, setRestaurantData] = useState(null);
 
   async function fetchData() {
+    setLoading(true);
     const {data} = await axios.get(url_path);
     setRestaurantData(data);
+    setLoading(false);
   }
 
   useEffect(() => {
     fetchData();
   }, []);
 
+  if (!restaurantData) {
+    return (
+      <SafeAreaView>
+        <ActivityIndicator />
+        <Text>Restaurants are Loading</Text>
+      </SafeAreaView>
+    );
+  }
+
   return (
-    <ScrollView>
+    <ScrollView
+      refreshControl={
+        <RefreshControl refreshing={loading} onRefresh={() => fetchData()} />
+      }>
       <ScrollView>
         <RestaurantCard data={restaurantData} />
       </ScrollView>
