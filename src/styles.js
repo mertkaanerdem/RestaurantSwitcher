@@ -24,11 +24,11 @@ const home_view = StyleSheet.create({
 const restaurant_view = StyleSheet.create({
   cardContainer: {
     height: deviceSize.height * 0.8,
-    backgroundColor: '#f57f17' /*#fff176*/,
+    backgroundColor: '#ff7f37' /*#fff176*/,
     padding: 10,
     margin: 10,
     borderRadius: 10,
-    opacity: 0.8,
+    opacity: 0.9,
   },
 
   cardImage: {
@@ -51,7 +51,7 @@ const restaurant_view = StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold',
     padding: 20,
-    color: '#333',
+    color: '#222',
     overflow: 'scroll',
   },
   descriptionContainer: {
@@ -59,6 +59,34 @@ const restaurant_view = StyleSheet.create({
     backgroundColor: '#fff179',
     borderRadius: 10,
     opacity: 0.9,
+  },
+
+  contactContainer: {
+    height: deviceSize.height / 7,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 20,
+    borderRadius: 10,
+    backgroundColor: '#e3e3e3',
+    alignItems: 'center',
+  },
+  addressContainer: {
+    padding: 20,
+    width: deviceSize.width * 0.5,
+  },
+  address: {
+    color: '#222',
+    textAlign: 'left',
+    textDecorationLine: 'underline',
+  },
+  phoneContainer: {
+    padding: 20,
+    width: deviceSize.width * 0.5,
+  },
+  phone: {
+    textDecorationLine: 'underline',
+    color: '#222',
+    textAlign: 'right',
   },
   buttonContainer: {
     height: deviceSize.height * 0.1,
